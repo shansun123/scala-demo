@@ -2,7 +2,7 @@ name := "scala-demo"
 
 version := "1.0"
 
-scalaVersion := "2.9.2"
+scalaVersion := "2.9.1"
 
 resolvers += "Java.net Maven2 Repository" at "http://download.java.net/maven/2/"
 
@@ -17,8 +17,13 @@ libraryDependencies ++= Seq(
 	    ExclusionRule(organization = "com.sun.jmx"),
 	    ExclusionRule(organization = "javax.jms")
    ),
-  "com.typesafe.akka" % "akka-actor" % "2.0" exclude("org.scala-lang", "scala-library")
+  "com.typesafe.akka" % "akka-actor" % "2.0" exclude("org.scala-lang", "scala-library"),
+  "org.scalaquery" %% "scalaquery" % "0.10.0-M1",
+  "org.squeryl" %% "squeryl" % "0.9.5",
+  "mysql" % "mysql-connector-java" % "5.1.10",
+  "org.htmlparser" % "htmlparser" % "1.6"
 )
+
 
 // Make project encoded in GBK by default
 scalacOptions ++= Seq("-encoding", "GBK")
